@@ -14,7 +14,6 @@ import {
 const pdfFile = loadPDF('./__mocks__/_pdf.pdf');
 const pdfFile2 = loadPDF('./__mocks__/_pdf2.pdf');
 
-/* eslint-disable comma-dangle */
 
 describe('Page', () => {
   // Loaded PDF file

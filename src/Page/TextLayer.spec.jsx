@@ -13,7 +13,6 @@ import {
 
 const pdfFile = loadPDF('./__mocks__/_pdf.pdf');
 
-/* eslint-disable comma-dangle */
 
 describe('TextLayer', () => {
   // Loaded page

@@ -7,7 +7,6 @@ import failingPage from '../../__mocks__/_failing_page';
 
 import { makeAsyncCallback, muteConsole, restoreConsole } from '../../test-utils';
 
-/* eslint-disable comma-dangle */
 
 describe('PageSVG', () => {
   describe('loading', () => {
