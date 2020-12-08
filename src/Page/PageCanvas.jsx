@@ -79,7 +79,8 @@ export class PageCanvasInternal extends PureComponent {
 
     const pixelRatio = getPixelRatio();
 
-    return page.getViewport({ scale: scale * pixelRatio, rotation: rotate });
+    // Adjust resolution you want.
+    return page.getViewport({ scale: (scale * pixelRatio) * 3, rotation: rotate });
   }
 
   get viewport() {
