@@ -159,7 +159,7 @@ export var PageCanvasInternal = /*#__PURE__*/function (_PureComponent) {
           page = _this$props4.page,
           rotate = _this$props4.rotate,
           scale = _this$props4.scale;
-      var pixelRatio = getPixelRatio(); // Adjust resolution you want.
+      var pixelRatio = getPixelRatio() * 2; // Adjust resolution you want.
 
       return page.getViewport({
         scale: scale * pixelRatio,
