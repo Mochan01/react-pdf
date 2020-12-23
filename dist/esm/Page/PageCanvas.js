@@ -161,14 +161,23 @@ export var PageCanvasInternal = /*#__PURE__*/function (_PureComponent) {
           scale = _this$props4.scale;
 
       var pixelRatio = getPixelRatio();
+
       if (
         (navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf( 'iPad') == -1)
         || navigator.userAgent.indexOf('iPod') > 0
         || navigator.userAgent.indexOf('Android') > 0
       ) {
-        pixelRatio = pixelRatio / 1.5; // Resolution for sp.
+        const maxCanvasSize = 1400000; // Set max canvas size, width * height as px.
+        const nativeWidth = page._pageInfo.view[2];
+        const nativeHeight = page._pageInfo.view[3];
+  
+        // Calc maxScale.
+        let maxScale = Math.sqrt(maxCanvasSize / (nativeWidth * nativeHeight));
+        maxScale = Math.ceil(maxScale * 100) / 100;
+
+        pixelRatio = getPixelRatio() * maxScale;
       } else {
-        pixelRatio = pixelRatio * 2; // Resolution for pc.
+        pixelRatio = getPixelRatio() * 2; // Adjust resolution you want.
       }
 
       return page.getViewport({
