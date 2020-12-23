@@ -159,7 +159,17 @@ export var PageCanvasInternal = /*#__PURE__*/function (_PureComponent) {
           page = _this$props4.page,
           rotate = _this$props4.rotate,
           scale = _this$props4.scale;
-      var pixelRatio = getPixelRatio() * 2; // Adjust resolution you want.
+
+      var pixelRatio = getPixelRatio();
+      if (
+        (navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf( 'iPad') == -1)
+        || navigator.userAgent.indexOf('iPod') > 0
+        || navigator.userAgent.indexOf('Android') > 0
+      ) {
+        pixelRatio = pixelRatio / 1.5; // Resolution for sp.
+      } else {
+        pixelRatio = pixelRatio * 2; // Resolution for pc.
+      }
 
       return page.getViewport({
         scale: scale * pixelRatio,
