@@ -166,6 +166,7 @@ export var PageCanvasInternal = /*#__PURE__*/function (_PureComponent) {
         (navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf( 'iPad') == -1)
         || navigator.userAgent.indexOf('iPod') > 0
         || navigator.userAgent.indexOf('Android') > 0
+        || /Mac OS/.test(navigator.userAgent) && document.ontouchstart !== undefined
       ) {
         const maxCanvasSize = 1400000; // Set max canvas size, width * height as px.
         const nativeWidth = page._pageInfo.view[2];
